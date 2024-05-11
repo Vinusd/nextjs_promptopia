@@ -51,5 +51,9 @@ const EditPrompt = () => {
    <Form type="Edit" post={post} setPost={setPost} submitting={submitting} handleSubmit={updatePrompt}/>
   )
 }
-
-export default EditPrompt
+const SuspendedUpdatePromptContent = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <EditPrompt />
+  </Suspense>
+);
+export default SuspendedUpdatePromptContent
